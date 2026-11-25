@@ -1,0 +1,42 @@
+name: Refresh dashboard
+on:
+  schedule:
+    - cron: '0 4 * * *'     # 9:30 AM IST
+    - cron: '30 12 * * *'   # 6:00 PM IST
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths: ['src/**']       # Hark pushes new calendar / voucher / menu data -> re-render
+permissions:
+  contents: write
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Fetch weather + air quality
+        run: python3 src/fetch_weather.py
+      - name: Fetch headlines + markets
+        run: python3 src/fetch_extra.py
+      - name: Fetch calendars (iCal secret addresses, if configured)
+        env:
+          ICAL_P: ${{ secrets.ICAL_P }}
+          ICAL_W: ${{ secrets.ICAL_W }}
+          ICAL_H: ${{ secrets.ICAL_H }}
+        run: python3 src/fetch_ical.py
+      - name: Render
+        run: python3 src/render.py && cp src/out/index.html index.html
+      - name: Commit
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html src/data
+          git diff --cached --quiet && { echo "no changes"; exit 0; }
+          git commit -m "Dashboard refresh $(TZ=Asia/Kolkata date '+%d %b %H:%M IST')"
+          for i in 1 2 3; do git pull --rebase -q && git push && exit 0; sleep 5; done; exit 1

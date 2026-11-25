@@ -1,0 +1,50 @@
+[
+ {
+  "name": "Club Marriott membership coupon",
+  "value": 11800,
+  "currency": "₹",
+  "expiry": "2026-12-25",
+  "priority": true,
+  "owner": ""
+ },
+ {
+  "name": "Taj Experiences gift card",
+  "value": 5000,
+  "currency": "₹",
+  "expiry": "2027-01-12",
+  "priority": true,
+  "owner": ""
+ },
+ {
+  "name": "Airbnb voucher",
+  "value": 100,
+  "currency": "$",
+  "expiry": "2027-03-31",
+  "priority": false,
+  "owner": "Aditi"
+ },
+ {
+  "name": "Blue Tokai gift card",
+  "value": 452,
+  "currency": "₹",
+  "expiry": "2027-09-29",
+  "priority": false,
+  "owner": ""
+ },
+ {
+  "name": "Blue Tokai gift card",
+  "value": 2000,
+  "currency": "₹",
+  "expiry": "2027-10-02",
+  "priority": false,
+  "owner": ""
+ },
+ {
+  "name": "Home Centre voucher",
+  "value": 1000,
+  "currency": "₹",
+  "expiry": "2027-08-21",
+  "priority": false,
+  "owner": "Aditi"
+ }
+]

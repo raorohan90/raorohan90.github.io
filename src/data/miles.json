@@ -1,0 +1,58 @@
+[
+ {
+  "program": "Air India Maharaja",
+  "balance": "87,581",
+  "asof": "16 Nov issuer email",
+  "expiry": null,
+  "expiry_label": ""
+ },
+ {
+  "program": "British Airways",
+  "balance": "92,887 Avios personal",
+  "asof": "30 Sep screenshot",
+  "expiry": null,
+  "expiry_label": ""
+ },
+ {
+  "program": "Emirates Skywards",
+  "balance": "7,560 miles",
+  "asof": "1 Nov email notice",
+  "expiry": "2026-12-31",
+  "expiry_label": "31 Dec 2026"
+ },
+ {
+  "program": "Qatar Privilege Club",
+  "balance": "19,000 Avios",
+  "asof": "30 Sep",
+  "expiry": "2028-12-30",
+  "expiry_label": "30 Dec 2028"
+ },
+ {
+  "program": "Flying Blue",
+  "balance": "1,010 miles",
+  "asof": "Live 30 Oct",
+  "expiry": "2028-08-21",
+  "expiry_label": "21 Aug 2028"
+ },
+ {
+  "program": "Virgin Atlantic",
+  "balance": "56,381 points",
+  "asof": "User screenshot 14 Nov",
+  "expiry": null,
+  "expiry_label": "Never expires"
+ },
+ {
+  "program": "United MileagePlus",
+  "balance": "195 miles",
+  "asof": "Live 30 Oct",
+  "expiry": null,
+  "expiry_label": "Never expires"
+ },
+ {
+  "program": "IndiGo BluChip",
+  "balance": "12,293 BluChips",
+  "asof": "User screenshot 22 Nov",
+  "expiry": null,
+  "expiry_label": ""
+ }
+]
